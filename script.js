@@ -44,13 +44,13 @@ keys.forEach(key => {
     if(operator == "") {
     firstNum += event.target.innerText;
     calcDisplay.innerHTML = firstNum;
-    console.log(firstNum);
+    // console.log(firstNum);
       
     } else if (operator !== ""){
       // calcDisplay.innerHTML += operator;
       secondNum += event.target.innerText;
       calcDisplay.innerHTML = secondNum;
-      console.log("secondnum " + secondNum);
+      // console.log("secondnum " + secondNum);
     }
   })
 })
@@ -89,13 +89,23 @@ functions.forEach (func => {
     
      else if (functn == ".") {
       if (firstNum !== "") {
+//         returns the index of the dot
+        let lastIndexDot = firstNum.toString().lastIndexOf(".");
+//         if only one dot is present then run this 
+        if (lastIndexDot == -1) { 
+        console.log("first num in dec " + firstNum);
         firstNum += ".";
         calcDisplay.innerHTML = firstNum;
+          }
       }
    
       else if (secondNum !== "") {
+        let lastIndexDot = secondNum.toString().lastIndexOf(".");
+        if (lastIndexDot == -1) {
+        console.log("second num in dec " + secondNum);
         secondNum += ".";
         calcDisplay.innerHTML = secondNum;
+          }
       } 
     }
     
