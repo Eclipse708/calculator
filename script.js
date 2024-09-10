@@ -11,7 +11,8 @@ let secondNum = "";
 let operator = "";
 let functn = "";
 let result = "";
-let calcDispResult = "";
+let dispResult = "";
+let dispResultRounded = "";
 
 
 const add = (a,b) => a+b;
@@ -43,8 +44,8 @@ keys.forEach(key => {
     if(operator == "") {
     firstNum += event.target.innerText;
     calcDisplay.innerHTML = firstNum;
-      
     console.log(firstNum);
+      
     } else if (operator !== ""){
       // calcDisplay.innerHTML += operator;
       secondNum += event.target.innerText;
@@ -67,12 +68,37 @@ functions.forEach (func => {
     console.log(functn);
     
     if (functn == "=") {
+      if (firstNum == "" && secondNum == "") {
+        console.log("pressed equal when num 1 and 2 are empty");
+      } else {
       console.log(firstNum + " " + " " + secondNum + " " + " " + operator);
-      calcDispResult = operate(parseInt(firstNum), parseInt(secondNum), operator);
-      // firstNum = calcDispResult;
-      console.log("result is: " + calcDispResult);
-      calcDisplay.innerHTML = calcDispResult;
+      dispResult = operate(parseInt(firstNum), parseInt(secondNum), operator);
+       
+      if (isFinite(dispResult)) { 
+      dispResultRounded = Math.round((dispResult + Number.EPSILON) * 100) / 100;
+      firstNum = dispResultRounded;
+      secondNum = "";
+      console.log("First num " + firstNum + " second num " + secondNum);
+      console.log("result is: " + dispResultRounded);
+      calcDisplay.innerHTML = dispResultRounded;
+      } else {
+        calcDisplay.innerHTML = "Lol";
+      }
+     }
     }
+    
+     else if (functn == ".") {
+      if (firstNum !== "") {
+        firstNum += ".";
+        calcDisplay.innerHTML = firstNum;
+      }
+   
+      else if (secondNum !== "") {
+        secondNum += ".";
+        calcDisplay.innerHTML = secondNum;
+      } 
+    }
+    
     else if (functn == "clear") {
       firstNum = "";
       secondNum = "";
