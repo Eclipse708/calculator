@@ -13,6 +13,7 @@ let functn = "";
 let result = "";
 let dispResult = "";
 let dispResultRounded = "";
+let lastIndexDotted = "";
 
 
 const add = (a,b) => a+b;
@@ -72,7 +73,7 @@ functions.forEach (func => {
         console.log("pressed equal when num 1 and 2 are empty");
       } else {
       console.log(firstNum + " " + " " + secondNum + " " + " " + operator);
-      dispResult = operate(parseInt(firstNum), parseInt(secondNum), operator);
+      dispResult = operate(parseFloat(firstNum), parseFloat(secondNum), operator);
        
       if (isFinite(dispResult)) { 
       dispResultRounded = Math.round((dispResult + Number.EPSILON) * 100) / 100;
@@ -88,7 +89,10 @@ functions.forEach (func => {
     }
     
      else if (functn == ".") {
-      if (firstNum !== "") {
+//        lastIndexDotted will initially be "" but if dot added to first num, it will be true 
+       console.log("last index dotted is: " + lastIndexDotted);
+      if (firstNum !== "" && lastIndexDotted == false) {
+          lastIndexDotted = true; 
 //         returns the index of the dot
         let lastIndexDot = firstNum.toString().lastIndexOf(".");
 //         if only one dot is present then run this 
@@ -118,5 +122,79 @@ functions.forEach (func => {
   })
 })
 
-// let calculate = operate(2,3,"+");
+// keyboard support
+document.addEventListener("keyup", (event) => {
+  console.log("key pressed");
+  console.log(event.keyCode);
+  const keyName = event.keyCode;
+  switch (keyName) {
+    case 8:
+    firstNum = "";
+    secondNum = "";
+    operator = "";
+    display.innerHTML = "";
+      
+    case 49:
+    firstNum += 1;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+      
+    case 50:
+    firstNum += 2;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+      
+    case 51:
+    firstNum += 3;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+   
+    case 52:
+    firstNum += 4;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+    
+    case 53:
+    firstNum += 5;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+    
+    case 54:
+    firstNum += 6;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+    
+    case 55:
+    firstNum += 7;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+   
+    case 56:
+    firstNum += 8;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+      
+    case 57:
+    firstNum += 9;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+    
+    case 48:
+    firstNum += 0;
+    calcDisplay.innerHTML = firstNum;
+    calcDisplay.innerHTML = firstNum;
+    break;
+  }
+})
+
+// let calculate = operate("2.2","3.1","+");
 // console.log(calculate);
