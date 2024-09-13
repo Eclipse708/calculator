@@ -117,21 +117,20 @@ functions.forEach (func => {
       firstNum = "";
       secondNum = "";
       operator = "";
-      calcDisplay.innerHTML = "";
+      calcDisplay.innerHTML = 0;
     }
   })
 })
 
 // keyboard support
 document.addEventListener("keyup", (event) => {
-  console.log(event.keyCode);
   const keyName = event.keyCode;
   switch (keyName) {
     case 8:
     firstNum = "";
     secondNum = "";
     operator = "";
-    display.innerHTML = "";
+    display.innerHTML = 0;
       
     case 49:
     if (operator === "") {
