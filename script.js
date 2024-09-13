@@ -124,7 +124,6 @@ functions.forEach (func => {
 
 // keyboard support
 document.addEventListener("keyup", (event) => {
-  console.log("key pressed");
   console.log(event.keyCode);
   const keyName = event.keyCode;
   switch (keyName) {
@@ -135,66 +134,113 @@ document.addEventListener("keyup", (event) => {
     display.innerHTML = "";
       
     case 49:
-    firstNum += 1;
+    if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
       
     case 50:
-    firstNum += 2;
+    if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
       
     case 51:
-    firstNum += 3;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
    
     case 52:
-    firstNum += 4;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
     
     case 53:
-    firstNum += 5;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
     
     case 54:
-    firstNum += 6;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
     
     case 55:
-    firstNum += 7;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
    
     case 56:
-    firstNum += 8;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
       
     case 57:
-    firstNum += 9;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
     
     case 48:
-    firstNum += 0;
+     if (operator === "") {
+    firstNum += event.key;
     calcDisplay.innerHTML = firstNum;
-    calcDisplay.innerHTML = firstNum;
+    }  
+    else {
+    secondNum += event.key;
+    calcDisplay.innerHTML = secondNum;
+    }
     break;
   }
 })
-
-// let calculate = operate("2.2","3.1","+");
-// console.log(calculate);
