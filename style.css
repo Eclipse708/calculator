@@ -16,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-color: #1a1919;
 }
 
 .calculator-container {
@@ -24,8 +24,8 @@ body {
   flex-wrap: wrap;
   width: 300px;
   background-color: #333;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 16px;
+  border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -36,19 +36,20 @@ body {
   text-align: right;
   padding: 20px;
   font-size: 2rem;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-bottom: 20px;
+  border: 4px solid #1a1919;
 }
 
 button {
   font-family: "DotGothic16", sans-serif;
   font-weight: 600;
   width: 21%;
-  padding: 20px;
+  padding: 10px;
   font-size: 1.5rem;
   margin: 5px;
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background-color: #888;
   color: white;
   cursor: pointer;
@@ -59,18 +60,31 @@ button:hover {
 }
 
 button.numeric {
-  background-color: #4CAF50;
+  background-color: #D94C45;
+}
+
+button.numeric:hover {
+  background-color: #c54640;
 }
 
 button.operator {
-  background-color: #FF5722;
+  background-color: #F8BF2A;
+}
+
+button.operator:hover {
+  background-color: #cd9f28;
 }
 
 button.function {
-  background-color: #9C27B0;
+  background-color: #ACE0F8;
 }
 
 button#clear-btn {
   width: 100%;
-  background-color: #f44336;
+  background-color: #4785B6;
+}
+
+button#clear-btn:hover {
+  width: 100%;
+  background-color: #3a709a;
 }
